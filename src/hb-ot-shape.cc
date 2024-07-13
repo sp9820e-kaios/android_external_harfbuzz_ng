@@ -494,7 +494,9 @@ zero_mark_widths_by_unicode (hb_buffer_t *buffer, bool adjust_offsets)
     {
       if (adjust_offsets)
         adjust_mark_offsets (&buffer->pos[i]);
-      zero_mark_width (&buffer->pos[i]);
+        if(buffer->props.script != HB_SCRIPT_MYANMAR){
+            zero_mark_width (&buffer->pos[i]);
+      }
     }
 }
 
